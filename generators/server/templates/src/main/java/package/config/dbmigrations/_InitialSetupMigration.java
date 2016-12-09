@@ -37,7 +37,7 @@ public class InitialSetupMigration {
 <%_ } _%>
     @ChangeSet(order = "01", author = "initiator", id = "01-addAuthorities")
     public void addAuthorities(DB db) {
-        DBCollection authorityCollection = db.getCollection("jhi_authority");
+        DBCollection authorityCollection = db.getCollection("authority");
         authorityCollection.insert(
             BasicDBObjectBuilder.start()
                 .add("_id", "ROLE_ADMIN")
@@ -50,7 +50,7 @@ public class InitialSetupMigration {
 
     @ChangeSet(order = "02", author = "initiator", id = "02-addUsers")
     public void addUsers(DB db) {
-        DBCollection usersCollection = db.getCollection("jhi_user");
+        DBCollection usersCollection = db.getCollection("user");
         usersCollection.createIndex("login");
         usersCollection.createIndex("email");
         usersCollection.insert(BasicDBObjectBuilder.start()
@@ -113,7 +113,7 @@ public class InitialSetupMigration {
 <%_ if (enableSocialSignIn) { _%>
     @ChangeSet(author = "initiator", id = "03-addSocialUserConnection", order = "03")
     public void addSocialUserConnection(DB db) {
-        DBCollection socialUserConnectionCollection = db.getCollection("jhi_social_user_connection");
+        DBCollection socialUserConnectionCollection = db.getCollection("social_user_connection");
         socialUserConnectionCollection.createIndex(BasicDBObjectBuilder
                 .start("user_id", 1)
                 .add("provider_id", 1)

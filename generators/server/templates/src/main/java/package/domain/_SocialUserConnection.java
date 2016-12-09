@@ -21,9 +21,9 @@ import java.util.Objects;
  * A Social user.
  */<% if (databaseType == 'sql') { %>
 @Entity
-@Table(name = "jhi_social_user_connection")
+@Table(name = "social_user_connection")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)<% } %><% if (databaseType == 'mongodb') { %>
-@Document(collection = "jhi_social_user_connection")<% } %>
+@Document(collection = "social_user_connection")<% } %>
 public class SocialUserConnection implements Serializable {
 
     private static final long serialVersionUID = 1L;

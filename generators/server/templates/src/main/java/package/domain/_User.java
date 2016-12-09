@@ -29,9 +29,9 @@ import java.time.ZonedDateTime;<% } %>
  * A user.
  */<% if (databaseType == 'sql') { %>
 @Entity
-@Table(name = "jhi_user")<% } %><% if (hibernateCache != 'no' && databaseType == 'sql') { %>
+@Table(name = "user")<% } %><% if (hibernateCache != 'no' && databaseType == 'sql') { %>
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)<% } %><% if (databaseType == 'mongodb') { %>
-@Document(collection = "jhi_user")<% } %><% if (databaseType == 'cassandra') { %>
+@Document(collection = "user")<% } %><% if (databaseType == 'cassandra') { %>
 @Table(name = "user")<% } %><% if (searchEngine == 'elasticsearch') { %>
 @Document(indexName = "user")<% } %>
 public class User<% if (databaseType == 'sql' || databaseType == 'mongodb') { %> extends AbstractAuditingEntity<% } %> implements Serializable {
@@ -112,7 +112,7 @@ public class User<% if (databaseType == 'sql' || databaseType == 'mongodb') { %>
     @JsonIgnore<% if (databaseType == 'sql') { %>
     @ManyToMany
     @JoinTable(
-        name = "jhi_user_authority",
+        name = "user_authority",
         joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
         inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "name")})<% if (hibernateCache != 'no') { %>
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)<% } %><% } %><% if (databaseType == 'sql' || databaseType == 'mongodb') { %>

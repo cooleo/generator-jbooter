@@ -273,8 +273,8 @@ function writeFiles() {
 
         writeImageFiles: function () {
             // Images
-            this.copy(MAIN_SRC_DIR + 'content/images/_hipster.png', MAIN_SRC_DIR + 'content/images/hipster.png');
-            this.copy(MAIN_SRC_DIR + 'content/images/_hipster2x.png', MAIN_SRC_DIR + 'content/images/hipster2x.png');
+            this.copy(MAIN_SRC_DIR + 'content/images/_booter.png', MAIN_SRC_DIR + 'content/images/hipster.png');
+            this.copy(MAIN_SRC_DIR + 'content/images/_booter2x.png', MAIN_SRC_DIR + 'content/images/hipster2x.png');
             this.copy(MAIN_SRC_DIR + 'content/images/_logo-jbooter.png', MAIN_SRC_DIR + 'content/images/logo-jbooter.png');
         },
 

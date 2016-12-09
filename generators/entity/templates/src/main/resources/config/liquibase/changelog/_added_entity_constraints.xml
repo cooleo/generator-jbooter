@@ -13,7 +13,7 @@
             ownerSide = relationships[idx].ownerSide,
             otherEntityName = relationships[idx].otherEntityName;
             if (otherEntityName === 'user') {
-                otherEntityTableName = 'jhi_user';
+                otherEntityTableName = 'user';
             } else {
                 otherEntityTableName = getEntityProperty(otherEntityName, 'entityTableName');
                 if (!otherEntityTableName) {
