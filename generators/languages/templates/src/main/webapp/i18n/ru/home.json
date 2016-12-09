@@ -1,0 +1,19 @@
+{
+    "home": {
+        "title": "Добро пожаловать, Java Hipster!",
+        "subtitle": "Это ваша домашняя страница",
+        "logged": {
+            "message": "Вы вошли как пользователь \"{{username}}\"."
+        },
+        "question": "Если у Вас возникли вопросы по JBooter:",
+        "link": {
+            "homepage": "JBooter домашняя страница",
+            "stackoverflow": "JBooter на Stack Overflow",
+            "bugtracker": "JBooter баг трекер",
+            "chat": "JBooter public chat room",
+            "follow": "пользователь @java_hipster в Twitter"
+        },
+        "like": "Если вам нравится JBooter, не забудьте дать нам звёздочку на",
+        "github": "GitHub"
+    }
+}

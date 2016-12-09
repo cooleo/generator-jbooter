@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="#{email.social.registration.title}">JBooter activation</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <p th:text="#{email.social.registration.greeting(${user.firstName})}">
+            Dear
+        </p>
+        <p th:text="#{email.social.registration.text1(${provider})}">
+            Your JBooter account has been created with the social connection: Provider.
+        </p>
+        <p>
+            <span th:text="#{email.social.registration.text2}">Regards, </span>
+            <br/>
+            <em th:text="#{email.signature}">JBooter.</em>
+        </p>
+    </body>
+</html>

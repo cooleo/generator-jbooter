@@ -1,0 +1,19 @@
+{
+    "home": {
+        "title": "Üdvözöljük, Java Hipster!",
+        "subtitle": "Ez a nyitóképernyőd",
+        "logged": {
+            "message": "Ön \"{{username}}\"-ként lépett be."
+        },
+        "question": "Ha bármi kérdése van a JBooter-ről:",
+        "link": {
+            "homepage": "JBooter honlapja",
+            "stackoverflow": "JBooter a Stack Overflow-n",
+            "bugtracker": "JBooter hibakövető",
+            "chat": "JBooter public chat room",
+            "follow": "lépjen kapcsolatba @java_hipster -rel a Twitter-en"
+        },
+        "like": "Ha tetszik a JBooter, ne feledjen csillagot adni a",
+        "github": "GitHub-on"
+    }
+}

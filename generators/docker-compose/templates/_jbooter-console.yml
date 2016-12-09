@@ -1,0 +1,22 @@
+version: '2'
+services:
+    jbooter-elasticsearch:
+        image: <%= DOCKER_JBOOTER_ELASTICSEARCH %>
+        ports:
+            - 9200:9200
+            - 9300:9300
+        # Uncomment this section to have elasticsearch data persisted to a volume
+        #volumes:
+        #   - ./log-data:/usr/share/elasticsearch/data
+    jbooter-logstash:
+        image: <%= DOCKER_JBOOTER_LOGSTASH %>
+        command: logstash -f /conf/logstash.conf
+        ports:
+            - 5000:5000/udp
+        # Uncomment this section to have logstash config loaded from a volume
+        #volumes:
+        #    - ./log-conf/:/conf
+    jbooter-console:
+        image: <%= DOCKER_JBOOTER_CONSOLE %>
+        ports:
+            - 5601:5601

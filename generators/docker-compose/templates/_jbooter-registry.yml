@@ -1,0 +1,28 @@
+version: '2'
+services:
+    jbooter-registry:
+        container_name: jbooter-registry
+        image: <%= DOCKER_JBOOTER_REGISTRY %>
+        volumes:
+            - ./central-server-config:/central-config
+        # By default the JBooter Registry runs with the "prod" and "native"
+        # Spring profiles.
+        # "native" profile means the filesystem is used to store data, see
+        # http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html
+        environment:
+            - SPRING_PROFILES_ACTIVE=dev,native
+            - SECURITY_USER_PASSWORD=<%= adminPassword %>
+            <%_ if (monitoring === 'elk') { _%>
+            - JBOOTER_LOGGING_LOGSTASH_ENABLED=true
+            - JBOOTER_LOGGING_LOGSTASH_HOST=jbooter-logstash
+            - JBOOTER_METRICS_LOGS_ENABLED=true
+            - JBOOTER_METRICS_LOGS_REPORTFREQUENCY=60
+            <%_ } _%>
+            <%_ if (monitoring === 'prometheus') { _%>
+            - JBOOTER_METRICS_PROMETHEUS_ENABLED=true
+            - JBOOTER_METRICS_PROMETHEUS_ENDPOINT=/prometheusMetrics
+            <%_ } _%>
+            # - GIT_URI=https://github.com/jbooter/jbooter-registry/
+            # - GIT_SEARCH_PATHS=central-config
+        ports:
+            - 8761:8761

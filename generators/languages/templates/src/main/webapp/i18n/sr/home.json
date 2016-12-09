@@ -1,0 +1,19 @@
+{
+    "home": {
+        "title": "Dobrodošli, Java Hipsteru!",
+        "subtitle": "Ovo je Vaša početna stranica",
+        "logged": {
+            "message": "Prijavljeni ste kao korisnik \"{{username}}\"."
+        },
+        "question": "Ako imate bilo kakva pitanja o JBooter-u:",
+        "link": {
+            "homepage": "JBooter početna stranica",
+            "stackoverflow": "JBooter na Stack Overflow",
+            "bugtracker": "JBooter tragač za greškama",
+            "chat": "JBooter javni čet",
+            "follow": "pratite @java_hipster na Twitter-u"
+        },
+        "like": "Ako Vam se dopada JBooter, ne zaboravite da nam date zvezdicu na",
+        "github": "GitHub-u"
+    }
+}

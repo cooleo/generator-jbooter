@@ -1,0 +1,19 @@
+{
+    "home": {
+        "title": "Tere tulemast, Java Hipster!",
+        "subtitle": "See on teie avaleht",
+        "logged": {
+            "message": "Olete sisse logitud kasutajana \"{{username}}\"."
+        },
+        "question": "Kui teil on küsimusi JBooter kohta:",
+        "link": {
+            "homepage": "JBooter koduleht",
+            "stackoverflow": "JBooter Stack Overflow-s",
+            "bugtracker": "JBooter veahaldus",
+            "chat": "JBooter avalik jututuba",
+            "follow": "jälgi @java_hipster Twitteris"
+        },
+        "like": "Kui teile meeldib JBooter, siis ärge unustage anda meile tähte",
+        "github": "GitHub-is"
+    }
+}

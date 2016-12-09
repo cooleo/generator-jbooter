@@ -1,0 +1,70 @@
+version: '2'
+services:
+<%_ for(var i = 0; i < appConfigs.length; i++) { _%>
+<%- appsYaml[i] %>
+<%_ } _%>
+<%_ if (useKafka) { _%>
+    zookeeper:
+        extends:
+            file: kafka.yml
+            service: zookeeper
+    kafka:
+        extends:
+            file: kafka.yml
+            service: kafka
+<%_ } _%>
+<%_ if (gatewayNb + microserviceNb > 0) { _%>
+    <%_ if (serviceDiscoveryType == 'eureka') { _%>
+    jbooter-registry:
+        extends:
+            file: jbooter-registry.yml
+            service: jbooter-registry
+    <%_ } _%>
+    <%_ if (serviceDiscoveryType == 'consul') { _%>
+    consul:
+        extends:
+            file: consul.yml
+            service: consul
+    consul-config-loader:
+        extends:
+            file: consul.yml
+            service: consul-config-loader
+    <%_ } _%>
+<%_ } _%>
+
+<%_ if (monitoring === 'elk') { _%>
+    jbooter-elasticsearch:
+        extends:
+            file: jbooter-console.yml
+            service: jbooter-elasticsearch
+    jbooter-logstash:
+        extends:
+          file: jbooter-console.yml
+          service: jbooter-logstash
+    jbooter-console:
+        extends:
+            file: jbooter-console.yml
+            service: jbooter-console
+<%_ } _%>
+
+<%_ if (monitoring === 'prometheus') { _%>
+    prometheus:
+        extends:
+            file: prometheus.yml
+            service: prometheus
+
+    alertmanager:
+        extends:
+            file: prometheus.yml
+            service: alertmanager
+
+    grafana:
+        extends:
+            file: prometheus.yml
+            service: grafana
+
+volumes:
+    prometheus_data: {}
+    grafana_data: {}
+
+<%_ } _%>

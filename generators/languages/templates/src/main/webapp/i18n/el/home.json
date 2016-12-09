@@ -1,0 +1,19 @@
+{
+    "home": {
+        "title": "Καλός όρισες, Java Hipster!",
+        "subtitle": "Αυτή είναι η αρχική σου σελίδα",
+        "logged": {
+            "message": "Είστε συνδεμένος με τον χρηστη \"{{username}}\"."
+        },
+        "question": "Αν έχετε ερωτήσεις σχετικά με το JBooter:",
+        "link": {
+            "homepage": "Αρχική σελίδα του JBooter",
+            "stackoverflow": "Το JBooter στο Stack Overflow",
+            "bugtracker": "JBooter bug tracker",
+            "chat": "JBooter chat room για το κοινό",
+            "follow": "Ακολουθείστε @java_hipster στο Twitter"
+        },
+        "like": "Άμα σας αρέσει το JBooter, μην ξεχάσετε να μας δώσετε ένα αστέρι",
+        "github": "GitHub"
+    }
+}

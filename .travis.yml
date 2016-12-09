@@ -1,0 +1,74 @@
+os:
+  - linux
+services:
+  - docker
+language: node_js
+node_js:
+  - "6.9.1"
+jdk:
+  - oraclejdk8
+cache:
+  yarn: true
+  directories:
+    - $HOME/.m2
+    - $HOME/.gradle
+    - $HOME/.yarn-cache
+    - node_modules
+env:
+  global:
+    - PROFILE=dev
+    - RUN_APP=1
+    - PROTRACTOR=0
+    - JBOOTER_TRAVIS=$TRAVIS_BUILD_DIR/travis
+    - JBOOTER_SAMPLES=$JBOOTER_TRAVIS/samples
+    - JBOOTER_SCRIPTS=$JBOOTER_TRAVIS/scripts
+  matrix:
+    - JBOOTER=app-default-from-scratch PROFILE=prod RUN_APP=0
+    - JBOOTER=app-gradle PROTRACTOR=1
+    - JBOOTER=app-mysql PROFILE=prod PROTRACTOR=1
+    - JBOOTER=app-psql-es-noi18n PROFILE=prod PROTRACTOR=1
+    - JBOOTER=app-social-websocket PROTRACTOR=1
+    - JBOOTER=app-hazelcast-cucumber
+    - JBOOTER=app-mariadb-kafka
+    - JBOOTER=app-gateway-eureka
+    - JBOOTER=app-gateway-consul
+    - JBOOTER=app-gateway-uaa
+    - JBOOTER=app-cassandra
+    - JBOOTER=app-mongodb
+    - JBOOTER=app-oauth2
+    - JBOOTER=app-jwt
+    - JBOOTER=app-microservice-eureka
+    - JBOOTER=app-microservice-consul
+
+before_install:
+  - jdk_switcher use oraclejdk8
+  - java -version
+  - export TZ=Australia/Canberra
+  - date
+  - sudo /etc/init.d/mysql stop
+  - sudo /etc/init.d/postgresql stop
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  # Repo for Yarn
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
+  - yarn global add yo bower gulp-cli
+install:
+  - cd "$TRAVIS_BUILD_DIR"/
+  - yarn install
+  - yarn link
+  - yarn run test
+script:
+  - $JBOOTER_SCRIPTS/01-generate-entities.sh
+  - $JBOOTER_SCRIPTS/02-generate-project.sh
+  - $JBOOTER_SCRIPTS/03-docker-compose.sh
+  - $JBOOTER_SCRIPTS/04-tests.sh
+  - $JBOOTER_SCRIPTS/05-run.sh
+  - $JBOOTER_SCRIPTS/06-sonar.sh
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/479b810ad42c816679fb
+    on_success: always  # options: [always|never|change] default: always
+    on_failure: always  # options: [always|never|change] default: always
+    on_start: false     # default: false

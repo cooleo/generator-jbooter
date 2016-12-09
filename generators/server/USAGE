@@ -1,0 +1,7 @@
+Description:
+    Creates a new JBooter server side application based on the selected options
+
+Example:
+    yo jbooter:server
+
+    This will create a Spring Boot server side app

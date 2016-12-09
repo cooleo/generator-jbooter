@@ -1,0 +1,7 @@
+Description:
+    Creates a new JBooter client side application based on the selected options
+
+Example:
+    yo jbooter:client
+
+    This will create an AngularJS client app

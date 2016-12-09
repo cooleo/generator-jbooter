@@ -1,0 +1,19 @@
+{
+    "home": {
+        "title": "Välkommen Java Hipster!",
+        "subtitle": "Det här är din hemsida",
+        "logged": {
+            "message": "Du är inloggad som \"{{username}}\"."
+        },
+        "question": "Om du har några frågor om JBooter:",
+        "link": {
+            "homepage": "JBooters hemsida",
+            "stackoverflow": "JBooter på Stack Overflow",
+            "bugtracker": "JBooter bughanterare",
+            "chat": "JBooter public chat room",
+            "follow": "kontakta @java_hipster på Twitter"
+        },
+        "like": "Om du gillar JBooter, glöm inte att ge oss en stjärna på",
+        "github": "GitHub"
+    }
+}

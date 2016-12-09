@@ -1,0 +1,7 @@
+Description:
+    Creates a new JBooter application based on the selected options
+
+Example:
+    yo jbooter
+
+    This will compose jbooter:client, jbooter:server and jbooter:languages to scaffold a full application

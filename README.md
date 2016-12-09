@@ -1,2 +1,1 @@
-# jbooter-generator
-jbooter-generator
+#generator-jbooter

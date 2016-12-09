@@ -1,0 +1,19 @@
+{
+    "home": {
+        "title": "歡迎, Java Hipster!",
+        "subtitle": "這裡是首頁",
+        "logged": {
+            "message": "您目前是以 \"{{username}}\" 帳號登入."
+        },
+        "question": "如果您有任何 JBooter 問題, 可以查閱下列資源:",
+        "link": {
+            "homepage": "JBooter 首頁",
+            "stackoverflow": "Stack Overflow 上關於 JBooter 的討論",
+            "bugtracker": "JBooter 的錯誤追蹤",
+            "chat": "JBooter public chat room",
+            "follow": "在 Twitter 上聯絡 @java_hipster"
+        },
+        "like": "如果您喜歡 JBooter, 請記得給我們一顆星星在",
+        "github": "GitHub"
+    }
+}
